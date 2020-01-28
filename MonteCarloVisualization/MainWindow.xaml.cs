@@ -10,6 +10,7 @@ namespace MonteCarloVisualization
 {
     public partial class MainWindow : Window
     {
+        public static int MaxPoints => 160000;
         private readonly IInputValidation _inputValidation;
         private DataContext _dataContext;
         private readonly MonteCarloSimulator _monteCarloSimulator;
@@ -21,7 +22,7 @@ namespace MonteCarloVisualization
             InitializeDataContext();
             _inputValidation = new InputValidation(this);
             _monteCarloSimulator = new MonteCarloSimulator(_dataContext.SizeContext.Diameter);
-            _bitmapCanvas = new BitmapCanvas(_dataContext.SizeContext.Diameter + 4, _dataContext.SizeContext.Diameter + 4);
+            _bitmapCanvas = new BitmapCanvas(_dataContext.SizeContext.Diameter, _dataContext.SizeContext.Diameter);
         }
 
         public void Init(object sender, RoutedEventArgs eventArgs)
@@ -149,9 +150,9 @@ namespace MonteCarloVisualization
             {
                 IterativeContext = new IterativeContext()
                 {
-                    StartCount = 100,
-                    EndCount = 10000,
-                    IterationsCount = 9
+                    StartCount = 1,
+                    EndCount = MaxPoints / 2,
+                    IterationsCount = 10
                 },
                 SizeContext = new SizeContext()
                 {

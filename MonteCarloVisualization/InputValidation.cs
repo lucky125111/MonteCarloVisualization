@@ -89,10 +89,10 @@ namespace MonteCarloVisualization
                         }
                     }
                 }
-                else if (end > 100000)
+                else if (end > MainWindow.MaxPoints)
                 {
                     MessageBox.Show("Start can't be greater than end");
-                    _mainWindow.TextBox_Start.Text = "100000";
+                    _mainWindow.TextBox_Start.Text = MainWindow.MaxPoints.ToString();
                 }
                 else if (end - start < iterations)
                 {
