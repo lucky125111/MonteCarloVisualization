@@ -6,11 +6,9 @@ The application let's you visualize π approximation. Written using **Windows Pr
 If you just want to run the application you can download the `dist/` folder. Then double click on `MonteCarloVisualization.application`
 
 ![MonteCarloVisualization](https://raw.githubusercontent.com/lucky125111/MonteCarloVisualization/master/MonteCarloVisualization.gif)
+
 ### Requirements
 Application runs only under Windows. If you don't have .NET run time installed run `dist/setup.exe`
-
-
-
 
 ## Monte Carlo π Approximation
 
