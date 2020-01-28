@@ -41,6 +41,12 @@ namespace MonteCarloVisualization
 
         private void DrawRectangle(int left, int top, int width, int height, Color color)
         {
+            if (left + width >= Bitmap.Width)
+                left = (int) Bitmap.Width - width;
+
+            if (top + height >= Bitmap.Height)
+                top = (int)Bitmap.Height - height;
+
             int colorData = color.R << 16; // R
             colorData |= color.G << 8; // G
             colorData |= color.B << 0; // B
